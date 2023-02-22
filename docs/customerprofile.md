@@ -77,6 +77,12 @@ profile = myProfiles.getEntity(entityId="09237308232164398232158732346",entitiyI
 
 A more complex call with Experience Event and Profile:
 
+The method takes 4 arguments:
+
+* schema_name: class name of the schema to be retrieved. (Default: _xdm.context.profile)
+* entityId:  identity ID
+* entityIdNS: Identity Namespace code. Required if entityId is used.
+
 ```python
 profile = myProfiles.getEntity(schema_name="_xdm.context.experienceevent", relatedEntityId="09237308232164398232158732346",relatedEntityIdNS='ecid',relatedSchema.name="_xdm.context.profile")
 ```
@@ -116,6 +122,14 @@ myDict = {
         "withCA": True
     }
 profiles = myProfiles.getEntities(request_data=myDict)
+```
+
+#### Delete Entities
+
+You can use this method to delete an entitty:
+
+```python
+profile = myProfiles.deleteEntity(schema_name="_xdm.context.experienceevent", entityId="09237308232164398232158732346",entityIdNS='ecid'")
 ```
 
 ### Get the Merge policies & create Merge policies
